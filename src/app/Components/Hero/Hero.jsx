@@ -4,14 +4,12 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import classes from "./Hero.module.css";
-import SplitType from "split-type";
 
 gsap.registerPlugin(useGSAP);
 
 const Hero = () => {
   const containerRef = useRef(null);
   const contentRef = useRef(null);
-  const titleRef = useRef(null);
   const datevenueyear = useRef(null);
   const numStripes = 8;
   const numTrails = 150;
@@ -31,27 +29,24 @@ const Hero = () => {
 
   useGSAP(
     () => {
-      let typeSplit = new SplitType(titleRef.current, {
-        types: "lines",
-        tagName: "span",
-      });
-
       const mainTl = gsap.timeline();
 
+      const titles = gsap.utils.toArray(`.${classes.title} span`);
+      gsap.set(titles, { autoAlpha: 1 });
+
       mainTl
-        .from(typeSplit.lines, {
-          y: "100%",
-          opacity: 0,
-          duration: 0.5,
-          ease: "power3.out",
-          stagger: 0.2,
+        .from(titles, {
+          yPercent: 100,
+          stagger: 0.1,
+          duration: 1,
+          ease: "power2.out",
           delay: 1,
           onComplete: () => {
             animateStripes();
           },
         })
-        .to(datevenueyear, {
-          y: "0%",
+        .to(datevenueyear.current, {
+          autoAlpha: 1,
           duration: 0.5,
           ease: "power2.out",
         });
@@ -115,7 +110,15 @@ const Hero = () => {
       </div>
       <div className={classes.text}>
         {/* <h1>11th IMSC</h1> */}
-        <h1 ref={titleRef}>11th International Maritime Science Conference</h1>
+        <h1 className={classes.title}>
+          <span>International</span>
+        </h1>
+        <h1 className={classes.title}>
+          <span>Maritime Science</span>
+        </h1>
+        <h1 className={classes.title}>
+          <span>Conference</span>
+        </h1>
         {/* <h1 ref={titleRef}>
           <span>11th International</span>
           <span>Maritime Science</span>
@@ -130,6 +133,11 @@ const Hero = () => {
             <p>2025</p>
           </div>
         </div>
+      </div>
+      <div className={classes.blobs}>
+        <div className={classes.blob} />
+        <div className={classes.blob} />
+        <div className={classes.blob} />
       </div>
     </div>
   );

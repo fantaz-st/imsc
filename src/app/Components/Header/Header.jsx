@@ -4,12 +4,11 @@ import Image from "next/image";
 import classes from "./Header.module.css";
 
 const Header = () => {
-  const [isScrolledUp, setIsScrolledUp] = useState(true);
+  const [isScrolledUp, setIsScrolledUp] = useState(false);
   const [prevScrollY, setPrevScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const headerRef = useRef(null);
 
-  // Scroll handling for hiding/showing the header
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -25,6 +24,12 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [prevScrollY]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsScrolledUp(true);
+    }, 2000);
+  }, []);
 
   return (
     <header className={`${classes.header} ${isScrolledUp ? classes.show : classes.hide}`} ref={headerRef}>
