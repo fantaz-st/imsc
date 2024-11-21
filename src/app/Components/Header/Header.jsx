@@ -38,13 +38,15 @@ const Header = () => {
           <Image src='/images/white-11th-imsc.svg' height={80} width={237} className={classes.logoImg} /* fill style={{ objectFit: "cover" }}  */ alt='Logo' />
         </div>
         <nav className={`${classes.nav} ${isMobileMenuOpen && classes.open}`}>
-          {["Welcome", "Organizers", "Topics", "Dates", "Committee", "Venue", "Registration", "Instructions for Authors"].map((item) => (
-            <div key={item} className={classes.navItem}>
-              <a href={`#${item.toLowerCase().replace(/ /g, "-")}`}>
-                <span>{item}</span>
-              </a>
-            </div>
-          ))}
+          <div className={classes.wrapper}>
+            {["Welcome", "Organizers", "Topics", "Dates", "Committee", "Venue", "Registration", "Instructions for Authors"].map((item) => (
+              <div key={item} className={classes.navItem}>
+                <a href={`#${item.toLowerCase().replace(/ /g, "-")}`}>
+                  <span>{item}</span>
+                </a>
+              </div>
+            ))}
+          </div>
         </nav>
         <button className={classes.submitButton}>
           <p>Submit Paper</p>
