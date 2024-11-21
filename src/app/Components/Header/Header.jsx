@@ -37,7 +37,7 @@ const Header = () => {
         <div className={classes.logo}>
           <Image src='/images/white-11th-imsc.svg' height={80} width={237} className={classes.logoImg} /* fill style={{ objectFit: "cover" }}  */ alt='Logo' />
         </div>
-        <nav className={`${classes.nav} ${isMobileMenuOpen ? classes.open : ""}`}>
+        <nav className={`${classes.nav} ${isMobileMenuOpen && classes.open}`}>
           {["Welcome", "Organizers", "Topics", "Dates", "Committee", "Venue", "Registration", "Instructions for Authors"].map((item) => (
             <div key={item} className={classes.navItem}>
               <a href={`#${item.toLowerCase().replace(/ /g, "-")}`}>

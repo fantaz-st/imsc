@@ -134,11 +134,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className={classes.blobs}>
-        <div className={classes.blob} />
-        <div className={classes.blob} />
-        <div className={classes.blob} />
-      </div>
     </div>
   );
 };
