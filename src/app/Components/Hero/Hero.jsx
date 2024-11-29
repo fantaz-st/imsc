@@ -47,7 +47,7 @@ const Hero = () => {
         })
         .to(datevenueyear.current, {
           autoAlpha: 1,
-          duration: 0.5,
+          duration: 1,
           ease: "power2.out",
         });
 

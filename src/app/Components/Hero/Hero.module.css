@@ -25,6 +25,7 @@
   top: 0;
   left: 0;
   padding: 6rem 0;
+  overflow: hidden;
 }
 
 .stripe {
@@ -190,7 +191,6 @@
   }
   .stripe5 {
     width: 400px;
-    overflow: hidden;
   }
   .stripe6 {
     width: 250px;
