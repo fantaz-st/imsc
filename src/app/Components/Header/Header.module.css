@@ -40,6 +40,10 @@
   gap: 1.5rem;
 }
 
+.wrapper {
+  display: flex;
+}
+
 .navItem a {
   color: white;
   text-decoration: none;
