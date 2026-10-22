@@ -1,11 +1,13 @@
-import { IBM_Plex_Mono, Inter_Tight } from "next/font/google";
+import { IBM_Plex_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import { SiteFooter, SiteHeader } from "./site-chrome";
+import { metadata } from "./settings/metadata";
 import "./globals.css";
 
-const interTight = Inter_Tight({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-inter-tight",
+const manrope = localFont({
+  src: "./fonts/manrope-variable.ttf",
+  weight: "200 800",
+  variable: "--font-manrope",
   display: "swap",
 });
 
@@ -16,14 +18,9 @@ const ibmPlexMono = IBM_Plex_Mono({
   display: "swap",
 });
 
-export const metadata = {
-  title: "IMSC 2027 — International Maritime Science Conference",
-  description: "Join the 12th International Maritime Science Conference in Split, Croatia in May 2027.",
-};
-
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${interTight.variable} ${ibmPlexMono.variable}`}>
+    <html lang="en" className={`${manrope.variable} ${ibmPlexMono.variable}`}>
       <body>
         <SiteHeader />
         {children}

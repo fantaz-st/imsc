@@ -1,0 +1,18 @@
+:root {
+  --font-body: var(--font-manrope), system-ui, sans-serif;
+  --font-mono: var(--font-ibm-plex-mono), monospace;
+  --navy: #004185;
+  --navy-deep: #00214a;
+  --ink: #071b33;
+  --cyan: #00aeef;
+  --pale-cyan: #b9e5fb;
+  --ground: #f5f7fa;
+  --line: #c9d3de;
+  --muted: #4a5a6e;
+  --accent: #ff6b4a;
+  --white: #fff;
+  --mist: #dce6ee;
+  --navy-rule: #3a6aa3;
+  --navy-border: #1e3654;
+  --hero-fade: rgba(0, 2, 8, 0.85);
+}

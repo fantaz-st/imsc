@@ -1,13 +1,4 @@
-:root {
-  --navy: #004185;
-  --ink: #071b33;
-  --cyan: #00aeef;
-  --pale-cyan: #b9e5fb;
-  --ground: #f5f7fa;
-  --line: #c9d3de;
-  --muted: #4a5a6e;
-  --accent: #ff6b4a;
-}
+@import "./settings/theme.css";
 
 @property --sweep {
   syntax: "<angle>";
@@ -30,7 +21,7 @@ body {
   overflow-x: hidden;
   background: var(--ground);
   color: var(--ink);
-  font-family: var(--font-inter-tight), system-ui, sans-serif;
+  font-family: var(--font-body);
   font-size: 18px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
